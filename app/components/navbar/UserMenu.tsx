@@ -1,17 +1,19 @@
-"use client";
+'use client'
 
-import React, { useCallback, useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
-import Avatar from "./Avatar";
-import MenuItem from "./MenuItem";
+import React, { useCallback, useState } from 'react'
+import { AiOutlineMenu } from 'react-icons/ai'
+import Avatar from './Avatar'
+import MenuItem from './MenuItem'
+import useRegisterModal from '@/app/hooks/useRegisterModal'
 
-type Props = {};
+type Props = {}
 
 const UserMenu = (props: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const registerModal = useRegisterModal()
   const toggleOpen = useCallback(() => {
-    setIsOpen((v) => !v);
-  }, []);
+    setIsOpen((v) => !v)
+  }, [])
   return (
     <div className="relative">
       <div className="flex flex-row items-center gap-3">
@@ -33,13 +35,16 @@ const UserMenu = (props: Props) => {
           <div className="flex flex-col cursor-pointer">
             <>
               <MenuItem label="Login" onClick={() => {}} />
-              <MenuItem label="Sign up" onClick={() => {}} />
+              <MenuItem
+                label="Sign up"
+                onClick={registerModal.onOpen}
+              />
             </>
           </div>
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default UserMenu;
+export default UserMenu
