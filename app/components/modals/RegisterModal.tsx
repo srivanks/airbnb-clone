@@ -109,6 +109,7 @@ function RegisterModal({}: Props) {
       </div>
     </div>
   )
+
   return (
     <Modal
       disabled={isLoading}

@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: airbnb_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - '27017:27017'
+    volumes:
+      # if you wish to setup additional user accounts specific per DB or with different roles you can use following entry point
+      - '$PWD/mongo-entrypoint/:/docker-entrypoint-initdb.d/'
+      - dbdata6:/data/db
+    command: mongod
+volumes:
+  dbdata6:
