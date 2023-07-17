@@ -3,5 +3,10 @@
   "editor.fontSize": 14,
   "editor.fontFamily": "Consolas",
   "editor.tabSize": 2,
-  "prettier.printWidth": 80
+  "prettier.printWidth": 80,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#182769",
+    "titleBar.activeBackground": "#223793",
+    "titleBar.activeForeground": "#FAFBFE"
+  }
 }
